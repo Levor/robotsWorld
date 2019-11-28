@@ -29,12 +29,14 @@ public class RobotsWorldController {
 
     @PostMapping
     public Robot create(@RequestBody Robot robot){
+        robot.setStatus("Свободен");
         return robotRepo.save(robot);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public Robot update(@PathVariable("id") Robot robotFromDb,
                         @RequestBody Robot robot){
+        robotFromDb.setStatus("Работает");
         BeanUtils.copyProperties(robot, robotFromDb, "id");
         return robotRepo.save(robotFromDb);
     }

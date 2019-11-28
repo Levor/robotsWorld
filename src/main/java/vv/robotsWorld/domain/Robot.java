@@ -9,6 +9,7 @@ public class Robot {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private String status = "Свободен";
 
     public Long getId() {
         return id;
@@ -24,5 +25,13 @@ public class Robot {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
