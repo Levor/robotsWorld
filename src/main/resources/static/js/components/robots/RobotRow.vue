@@ -1,18 +1,10 @@
 <template>
-    <div style="margin-bottom: 15px">
-        <span style="left: 0px">
-        <i>({{robot.id}})</i>
-        </span>
-        <span style="position: absolute; left: 60px">
-        {{robot.name}}
-        </span>
-        <span style="position: absolute; left: 250px">
-            {{robot.status}}
-        </span>
-        <span style="position: absolute; left: 350px">
-        <input style="margin-left: 10px " type="button" value="Отправить" @click ="sent">
-        <input type="button" style="margin-left: 10px " value="Освободить" @click ="sent2">
-        </span>
+    <div>
+        <v-card-title><p>Робот: {{robot.name}}    Статус: <i style="color: darkblue">{{robot.status}}</i></p></v-card-title>
+        <v-card-text>
+            <v-btn @click ="sent">Отправить</v-btn>
+            <v-btn @click ="sent2">Освободить</v-btn>
+        </v-card-text>
     </div>
 </template>
 

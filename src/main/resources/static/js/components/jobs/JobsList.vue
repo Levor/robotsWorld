@@ -1,8 +1,13 @@
 <template>
-    <div>
+    <v-container>
         <jobs-form :jobs ="jobs" />
-        <h1>Список работ</h1>
-        <ol><jobs-row v-for="job in jobs" :key="job.id" :job="job" /></ol></div>
+        <v-card>
+            <v-container>
+                <h1>Список работ:</h1>
+                <ol><jobs-row v-for="job in jobs" :key="job.id" :job="job" /></ol>
+            </v-container>
+        </v-card>
+    </v-container>
 </template>
 
 <script>

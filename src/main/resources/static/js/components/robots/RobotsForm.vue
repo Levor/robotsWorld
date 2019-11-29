@@ -1,8 +1,12 @@
 <template>
-    <div>
-        <input type="text" placeholder="Напишите имя робота" v-model = "name">
-        <input type="button" value="Save" @click ="save">
-    </div>
+    <v-layout>
+        <v-text-field label="Добавьте робота"
+                      :rounded="true"
+                      :filled="true"
+                      placeholder="Напишите имя робота"
+                      v-model = "name"/>
+        <v-btn @click ="save">Добавить</v-btn>
+    </v-layout>
 </template>
 
 <script>

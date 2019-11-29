@@ -1,5 +1,7 @@
 <template>
-    <li><i>Название работы:  {{job.name}}</i> <b>Время выполнения работы: {{job.time}}</b></li>
+        <li>
+            <p class="font-weight-black mr-10">Название работы:<i class="font-weight-regular">  {{job.name}}</i></p> <p class="font-weight-black">Время выполнения работы:<i class="font-weight-regular">  {{job.time}} минут</i></p>
+        </li>
 </template>
 
 <script>

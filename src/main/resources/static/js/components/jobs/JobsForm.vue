@@ -1,9 +1,18 @@
 <template>
-    <div>
-        <input type="text" placeholder="Напишите название роботы" v-model = "name">
-        <input type="text" placeholder="Напишите время выполнения" v-model = "time">
-        <input type="button" value="Save" @click ="save">
-    </div>
+    <v-layout>
+        <v-text-field label="Напишите название роботы"
+                      placeholder="Название роботы"
+                      class="red--text"
+                      :rounded="true"
+                      :filled="true"
+                      v-model = "name" />
+        <v-text-field label="Напишите время выполнения"
+                      placeholder="Время выполнения работы в минутах"
+                      :rounded="true"
+                      :filled="true"
+                      v-model = "time"/>
+        <v-btn depressed large color="primary" @click ="save">Добавить</v-btn>
+    </v-layout>
 </template>
 
 <script>

@@ -1,26 +1,30 @@
 <template>
-    <div>
-        <div style="margin-bottom: 20px">
+        <v-container class="mt-12">
             <robots-form :robots ="robots" />
-        </div>
-        <div style="margin-bottom: 20px">
-            <h1>Лист роботов</h1>
-        </div>
-        <div style="margin-bottom: 20px">
-            <robot-row v-for="robot in robots" :key="robot.id" :robot="robot" :robots ="robots" />
-        </div>
-        <div>
-            <input style="margin-left: 10px " type="button" value="Отправить всех" @click ="sentall">
-            <input type="button" style="margin-left: 10px " value="Освободить всех" @click ="sentall2">
-        </div>
-    </div>
 
+            <v-card elevation="10">
+                <h1 style="text-align: center">Лист роботов</h1>
+                <robot-row v-for="robot in robots" :key="robot.id" :robot="robot" :robots ="robots" />
+                <p style="text-align: center"><v-btn depressed large color="primary" @click ="sentall" class="mt-8">Отправить всех</v-btn>
+                <v-btn depressed large color="primary" @click ="sentall2" class="mt-8"> Освободить всех</v-btn></p>
+            </v-card>
+        <v-container class="mt-8">
+
+        </v-container>
+        </v-container>
 </template>
 
 <script>
     import RobotRow from './RobotRow.vue'
     import RobotsForm from "./RobotsForm.vue";
-
+    function getIndex(list, id) {
+        for (var i = 0; i < list.length; i++ ) {
+            if (list[i].id === id) {
+                return i
+            }
+        }
+        return -1
+    }
     export default {
         props: ['robots'],
         components:{
@@ -29,7 +33,17 @@
         },
         methods: {
 
-            sentall() {},
+            sentall() {
+/*                for (var i = 0; i < this.robots.length; i++ ) {
+                    this.robots[i].status="Работает",
+                        this.$resource('/robot{/id}').update({id: this.robots[i].id}, this.robots[i]).then(result =>
+                            result.json().then(data => {
+                                const index = getIndex(this.robots[i], data.id)
+                                this.robots.splice(index, 1, data)
+                            })
+                        )
+                }*/
+            },
             sentall2() {}
         },
         created() {
