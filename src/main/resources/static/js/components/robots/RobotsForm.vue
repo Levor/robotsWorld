@@ -5,7 +5,7 @@
                       :filled="true"
                       placeholder="Напишите имя робота"
                       v-model = "name"/>
-        <v-btn @click ="save">Добавить</v-btn>
+        <v-btn class="mt-2 ml-3" @click ="save">Добавить</v-btn>
     </v-layout>
 </template>
 

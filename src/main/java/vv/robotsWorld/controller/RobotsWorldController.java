@@ -34,7 +34,7 @@ public class RobotsWorldController {
     }
 
     @PutMapping("{id}")
-    public Robot update(@PathVariable("id") Robot robotFromDb,
+    public Robot sent(@PathVariable("id") Robot robotFromDb,
                         @RequestBody Robot robot){
         BeanUtils.copyProperties(robot, robotFromDb, "id");
         return robotRepo.save(robotFromDb);

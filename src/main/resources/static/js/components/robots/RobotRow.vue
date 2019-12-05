@@ -3,7 +3,7 @@
         <v-card-title><p>Робот: {{robot.name}}    Статус: <i style="color: darkblue">{{robot.status}}</i></p></v-card-title>
         <v-card-text>
             <v-btn @click ="sent">Отправить</v-btn>
-            <v-btn @click ="sent2">Освободить</v-btn>
+            <v-btn @click ="getfree">Освободить</v-btn>
         </v-card-text>
     </div>
 </template>
@@ -29,7 +29,7 @@
                         })
                     )
             },
-            sent2() {
+            getfree() {
                 this.robot.status = "Свободен",
                     this.$resource('/robot{/id}').update({id: this.robot.id}, this.robot).then(result =>
                         result.json().then(data => {
